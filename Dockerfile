@@ -1,5 +1,5 @@
-# Use the official .NET SDK image to build the app
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+# Use the official .NET SDK image for .NET 7.0 to build the app
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 # Set the working directory
 WORKDIR /app
@@ -15,8 +15,8 @@ COPY . .
 WORKDIR "/app/BlazorChatApp/BlazorChatApp"
 RUN dotnet publish "BlazorChatApp.csproj" -c Release -o /app/publish
 
-# Use the official .NET runtime image to run the app
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+# Use the official .NET runtime image for .NET 7.0 to run the app
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 EXPOSE 80
 
