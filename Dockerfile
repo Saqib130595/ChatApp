@@ -5,12 +5,12 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
 # Copy the project files and restore dependencies
-COPY ["BlazorChatApp/BlazorChatApp.csproj", "BlazorChatApp/"]
-RUN dotnet restore "BlazorChatApp/BlazorChatApp.csproj"
+COPY ["BlazorChatApp.csproj", "./"]
+RUN dotnet restore "BlazorChatApp.csproj"
 
 # Publish the application
 COPY . .
-WORKDIR "/app/BlazorChatApp"
+WORKDIR "/app"
 RUN dotnet publish "BlazorChatApp.csproj" -c Release -o /app/publish
 
 # Use the official .NET runtime image to run the app
@@ -22,4 +22,4 @@ EXPOSE 80
 COPY --from=build /app/publish .
 
 # Set the entry point for the application
-ENTRYPOINT ["dotnet", "BlazorChatApp.Server.dll"]
+ENTRYPOINT ["dotnet", "BlazorChatApp.dll"]
