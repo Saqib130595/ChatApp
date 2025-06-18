@@ -4,13 +4,15 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 # Set the working directory
 WORKDIR /app
 
-# Copy the project files and restore dependencies
-COPY ["BlazorChatApp.csproj", "./"]
-RUN dotnet restore "BlazorChatApp.csproj"
+# Copy the project file and restore dependencies
+COPY ["BlazorChatApp/BlazorChatApp.csproj", "BlazorChatApp/"]
+RUN dotnet restore "BlazorChatApp/BlazorChatApp.csproj"
+
+# Copy the rest of the application code
+COPY . .
 
 # Publish the application
-COPY . .
-WORKDIR "/app"
+WORKDIR "/app/BlazorChatApp"
 RUN dotnet publish "BlazorChatApp.csproj" -c Release -o /app/publish
 
 # Use the official .NET runtime image to run the app
