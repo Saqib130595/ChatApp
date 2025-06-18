@@ -1,0 +1,210 @@
+﻿@page "/chat"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager Navigation
+
+<h3 style="text-align:center; font-family:sans-serif; color:#4A90E2;">Just Fun Chat</h3>
+
+<div style="max-width: 600px; margin: 0 auto; font-family: sans-serif;">
+    <div style="margin-bottom: 10px;">
+        <input @bind="userInput" placeholder="Your name"
+               style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;" />
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+        <input @bind="messageInput" @onkeypress="HandleKeyPress" placeholder="Message"
+               style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;" />
+        <button @onclick="Send"
+                style="padding: 8px 16px; background-color: #4A90E2; color: white; border: none; border-radius: 5px;">
+            Send
+        </button>
+    </div>
+
+    @* <ul>
+        @foreach (var msg in messages)
+        {
+            <li><b>@msg.User:</b> @msg.Text</li>
+        }
+    </ul> *@
+    @* <ul>
+        @((MarkupString)string.Join("", messages.Select(m =>
+            $"<li>{(string.IsNullOrWhiteSpace(m.Text) ? m.User : m.Text)}</li>")))
+    </ul> *@
+    @* <ul>
+        @((MarkupString)string.Join("", messages.Select(m =>
+            $"<li><b>{(m.User == userInput ? "You" : m.User)}:</b> {m.Text}</li>")))
+    </ul> *@
+
+    @* <ul style="list-style: none; padding: 0; margin-top: 20px; max-height: 400px; overflow-y: auto; border: 1px solid #eee; border-radius: 5px; background: #f9f9f9;">
+        @((MarkupString)string.Join("", messages.Select(m =>
+                $"<li style='padding: 10px; border-bottom: 1px solid #e0e0e0;'>" +
+                $"{(m.User == userInput && !m.Text.StartsWith("SomneOne:") ? $"<b style='color:#4A90E2;'>You:</b> {m.Text}" : m.Text)}" +
+                $"</li>")))
+    </ul> *@
+    <ul style="list-style: none; padding: 0; margin-top: 20px; max-height: 400px; overflow-y: auto; border: 1px solid #eee; border-radius: 5px; background: #f9f9f9;">
+        @((MarkupString)string.Join("", messages.Select(m =>
+                $"<li style='padding: 10px; border-bottom: 1px solid #e0e0e0;'>" +
+                (
+                m.Text.StartsWith("SomneOne:")
+                ? $"<b><span style='color:#dc3545;'>SomneOne:</span></b> {m.Text.Substring("SomneOne:".Length).TrimStart()}"
+                : (m.User == userInput
+                ? $"<b style='color:#28a745;'>You:</b> {m.Text}"
+                : $"<b style='color:#dc3545;'>{m.User}:</b> {m.Text}")
+                ) +
+                "</li>")))
+    </ul>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@if (showNotification)
+{
+    <NotificationPopup User="@notificationUser" Message="@notificationMessage"
+                       OnReply="HandleReply"
+                       OnClose="CloseNotification" />
+}
+
+@code {
+    private HubConnection? hubConnection;
+    private string? userInput;
+    private string? messageInput;
+    private List<ChatMessage> messages = new();
+
+    // Notification state
+    private bool showNotification = false;
+    private string notificationUser = "";
+    private string notificationMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(Navigation.ToAbsoluteUri("/chathub"))
+            .WithAutomaticReconnect()
+            .Build();
+
+        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        {
+            messages.Add(new ChatMessage { User = user, Text = message });
+            InvokeAsync(StateHasChanged);
+
+            // Show popup only if message is from others
+            if (userInput != user)
+            {
+                notificationUser = user;
+                notificationMessage = message;
+                showNotification = true;
+                InvokeAsync(StateHasChanged);
+            }
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    private async Task Send()
+    {
+        if (!string.IsNullOrWhiteSpace(userInput) && !string.IsNullOrWhiteSpace(messageInput))
+        {
+            // Send message via SignalR
+            await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+
+            // Add your message locally
+            var sentMessage = new ChatMessage { User = userInput!, Text = messageInput };
+            //messages.Add(sentMessage);
+
+            // Show popup for your own sent message
+            notificationUser = sentMessage.User;
+            notificationMessage = sentMessage.Text;
+            showNotification = true;
+
+            messageInput = string.Empty;
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private async Task HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            await Send();
+        }
+    }
+
+    // private async Task HandleReply(string replyText)
+    // {
+    //     // Send reply as a new message prefixed with "Reply to <user>: "
+    //     var replyMessage = $"Reply to {notificationUser}: {replyText}";
+    //     await hubConnection.SendAsync("SendMessage", userInput, replyMessage);
+
+    //     CloseNotification();
+    // }
+
+    // private async Task HandleReply(string replyText)
+    // {
+    //     if (string.IsNullOrWhiteSpace(replyText)) return;
+
+    //     // Compose reply clearly indicating target
+    //     // var replyMessageText = $"(in reply to {notificationUser}) {replyText}";
+
+    //     var replyMessageText = $"(SomneOne: ) {replyText}";
+
+    //     // Send via SignalR as yourself
+    //     await hubConnection.SendAsync("SendMessage", userInput, replyMessageText);
+
+    //     // Add to local messages list
+    //     messages.Add(new ChatMessage
+    //     {
+    //         User = userInput!,
+    //         Text = replyMessageText
+    //     });
+
+    //     CloseNotification();
+    //     await InvokeAsync(StateHasChanged);
+    // }
+    private async Task HandleReply(string replyText)
+    {
+        if (string.IsNullOrWhiteSpace(replyText)) return;
+
+        var replyMessageText = $"SomneOne: {replyText}";
+
+        // Send via SignalR
+        await hubConnection.SendAsync("SendMessage", userInput, replyMessageText);
+
+        // Remove this line to avoid duplicates:
+        // messages.Add(new ChatMessage { User = userInput!, Text = replyMessageText });
+
+       // CloseNotification();
+        await InvokeAsync(StateHasChanged);
+    }
+
+
+
+
+
+
+
+
+    private void CloseNotification()
+    {
+        showNotification = false;
+        notificationUser = "";
+        notificationMessage = "";
+    }
+
+    private class ChatMessage
+    {
+        public string User { get; set; } = "";
+        public string Text { get; set; } = "";
+    }
+}

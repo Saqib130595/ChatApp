@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|c:\\users\\saqib\\onedrive\\desktop\\chatapp\\blazorchatapp\\blazorchatapp\\pages\\notificationpopup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1FB5054-597B-4EC9-82BA-0E79ACBB8EF3}|BlazorChatApp\\BlazorChatApp.csproj|solutionrelative:blazorchatapp\\pages\\notificationpopup.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Shared\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "BlazorChatApp\\Shared\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T09:57:36.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\Index.razor",
+              "RelativeToolTip": "BlazorChatApp\\Pages\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T09:57:02.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationPopup.razor",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\NotificationPopup.razor",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Pages\\NotificationPopup.razor",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\NotificationPopup.razor",
+              "RelativeToolTip": "BlazorChatApp\\Pages\\NotificationPopup.razor",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T08:51:33.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "BlazorChatApp\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:49:34.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Shared\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "BlazorChatApp\\Shared\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T08:17:22.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Chat.razor",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\Chat.razor",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Pages\\Chat.razor",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Pages\\Chat.razor",
+              "RelativeToolTip": "BlazorChatApp\\Pages\\Chat.razor",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAAAL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-18T08:16:52.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Program.cs",
+              "RelativeDocumentMoniker": "BlazorChatApp\\Program.cs",
+              "ToolTip": "C:\\Users\\saqib\\OneDrive\\Desktop\\ChatApp\\BlazorChatApp\\BlazorChatApp\\Program.cs",
+              "RelativeToolTip": "BlazorChatApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T08:15:03.916Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
